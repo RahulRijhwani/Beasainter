@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Image, Text, StatusBar, View} from 'react-native';
+import {StyleSheet, Image, Text, StatusBar, View, Alert} from 'react-native';
 import config from '../config';
 import Header from '../component/header';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -25,6 +25,7 @@ export default class Home extends React.Component {
       });
       await this.getData();
     });
+    Alert.alert('Beasa International : ','Poster creation for free please create your poster.')
   };
   getData = async () => {
     var uId = null;

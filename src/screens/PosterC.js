@@ -260,7 +260,7 @@ export default class PosterC extends React.Component {
     }
   };
   render() {
-    const {UpdatedImage, original} = this.state;
+    const { UpdatedImage, original } = this.state;
     return (
       <View style={styles.container}>
         <StatusBar
@@ -284,14 +284,14 @@ export default class PosterC extends React.Component {
             <ScrollView
               contentContainerStyle={
                 !!this.state.UpdatedImageData &&
-                parseInt(this.state.UpdatedImageData.Width) >
+                  parseInt(this.state.UpdatedImageData.Width) >
                   config.Constant.SCREEN_WIDTH
-                  ? {alignItems: 'center', justifyContent: 'center'}
+                  ? { alignItems: 'center', justifyContent: 'center' }
                   : {
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '100%',
-                    }
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '100%',
+                  }
               }
               bounces={false}
               horizontal={true}>
@@ -312,36 +312,36 @@ export default class PosterC extends React.Component {
                         ? parseInt(this.state.UpdatedImageData.Width)
                         : config.Constant.SCREEN_WIDTH
                       : this.getFullWidth(
-                          !!this.state.UpdatedImageData &&
-                            parseInt(this.state.UpdatedImageData.Width)
-                            ? parseInt(this.state.UpdatedImageData.Width)
-                            : config.Constant.SCREEN_WIDTH,
-                        ),
+                        !!this.state.UpdatedImageData &&
+                          parseInt(this.state.UpdatedImageData.Width)
+                          ? parseInt(this.state.UpdatedImageData.Width)
+                          : config.Constant.SCREEN_WIDTH,
+                      ),
                     height: original
                       ? !!this.state.UpdatedImageData &&
                         parseInt(this.state.UpdatedImageData.Height)
                         ? parseInt(this.state.UpdatedImageData.Height)
                         : 200
                       : this.getFullHeight(
-                          !!this.state.UpdatedImageData &&
-                            parseInt(this.state.UpdatedImageData.Height)
-                            ? parseInt(this.state.UpdatedImageData.Height)
-                            : 200,
-                          !!this.state.UpdatedImageData &&
-                            parseInt(this.state.UpdatedImageData.Height)
-                            ? parseInt(this.state.UpdatedImageData.Height)
-                            : config.Constant.SCREEN_HEIGHT,
-                          !!this.state.UpdatedImageData &&
-                            parseInt(this.state.UpdatedImageData.Width)
-                            ? parseInt(this.state.UpdatedImageData.Width)
-                            : config.Constant.SCREEN_WIDTH,
-                        ),
+                        !!this.state.UpdatedImageData &&
+                          parseInt(this.state.UpdatedImageData.Height)
+                          ? parseInt(this.state.UpdatedImageData.Height)
+                          : 200,
+                        !!this.state.UpdatedImageData &&
+                          parseInt(this.state.UpdatedImageData.Height)
+                          ? parseInt(this.state.UpdatedImageData.Height)
+                          : config.Constant.SCREEN_HEIGHT,
+                        !!this.state.UpdatedImageData &&
+                          parseInt(this.state.UpdatedImageData.Width)
+                          ? parseInt(this.state.UpdatedImageData.Width)
+                          : config.Constant.SCREEN_WIDTH,
+                      ),
                     alignSelf: 'center',
                     zIndex: -10,
                   }}
                   source={
                     !!UpdatedImage
-                      ? {uri: UpdatedImage}
+                      ? { uri: UpdatedImage }
                       : require('../assets/images/addImg.png')
                   }
                   resizeMode={'contain'}
@@ -350,7 +350,7 @@ export default class PosterC extends React.Component {
                       onLoadImage: true,
                     });
                   }}
-                  onLoad={(e) => {}}
+                  onLoad={(e) => { }}
                   onLoadEnd={(e) => {
                     this.setState({
                       onLoadImage: false,
@@ -367,33 +367,33 @@ export default class PosterC extends React.Component {
                           ? config.Constant.SCREEN_WIDTH * 0.2
                           : !!this.state.UpdatedImageData &&
                             parseInt(this.state.UpdatedImageData.Image_Width)
-                          ? this.getFullWidthImage(
+                            ? this.getFullWidthImage(
                               !!this.state.UpdatedImageData &&
                                 parseInt(
                                   this.state.UpdatedImageData.Image_Width,
                                 )
                                 ? parseInt(
-                                    this.state.UpdatedImageData.Image_Width,
-                                  )
+                                  this.state.UpdatedImageData.Image_Width,
+                                )
                                 : 10,
                               !!this.state.UpdatedImageData &&
                                 parseInt(this.state.UpdatedImageData.Width)
                                 ? parseInt(this.state.UpdatedImageData.Width)
                                 : 50,
                             )
-                          : 50,
+                            : 50,
                         height: original
                           ? config.Constant.SCREEN_WIDTH * 0.2
                           : !!this.state.UpdatedImageData &&
                             parseInt(this.state.UpdatedImageData.Height)
-                          ? this.getFullHeightImage(
+                            ? this.getFullHeightImage(
                               !!this.state.UpdatedImageData &&
                                 parseInt(
                                   this.state.UpdatedImageData.Image_Height,
                                 )
                                 ? parseInt(
-                                    this.state.UpdatedImageData.Image_Height,
-                                  )
+                                  this.state.UpdatedImageData.Image_Height,
+                                )
                                 : 10,
                               !!this.state.UpdatedImageData &&
                                 parseInt(this.state.UpdatedImageData.Height)
@@ -404,7 +404,7 @@ export default class PosterC extends React.Component {
                                 ? parseInt(this.state.UpdatedImageData.Width)
                                 : 50,
                             )
-                          : 50,
+                            : 50,
 
                         top: original
                           ? !!this.state.UpdatedImageData &&
@@ -412,47 +412,47 @@ export default class PosterC extends React.Component {
                             ? parseInt(this.state.UpdatedImageData.Image_Y_pos)
                             : 10
                           : this.getLogoYTop(
-                              !!this.state.UpdatedImageData &&
-                                parseInt(
-                                  this.state.UpdatedImageData.Image_Y_pos,
-                                )
-                                ? parseInt(
-                                    this.state.UpdatedImageData.Image_Y_pos,
-                                  )
-                                : 10,
-                              !!this.state.UpdatedImageData &&
-                                parseInt(this.state.UpdatedImageData.Height)
-                                ? parseInt(this.state.UpdatedImageData.Height)
-                                : 50,
-                              !!this.state.UpdatedImageData &&
-                                parseInt(this.state.UpdatedImageData.Width)
-                                ? parseInt(this.state.UpdatedImageData.Width)
-                                : 50,
-                            ),
+                            !!this.state.UpdatedImageData &&
+                              parseInt(
+                                this.state.UpdatedImageData.Image_Y_pos,
+                              )
+                              ? parseInt(
+                                this.state.UpdatedImageData.Image_Y_pos,
+                              )
+                              : 10,
+                            !!this.state.UpdatedImageData &&
+                              parseInt(this.state.UpdatedImageData.Height)
+                              ? parseInt(this.state.UpdatedImageData.Height)
+                              : 50,
+                            !!this.state.UpdatedImageData &&
+                              parseInt(this.state.UpdatedImageData.Width)
+                              ? parseInt(this.state.UpdatedImageData.Width)
+                              : 50,
+                          ),
                         left: original
                           ? !!this.state.UpdatedImageData &&
                             parseInt(this.state.UpdatedImageData.Image_X_pos)
                             ? parseInt(this.state.UpdatedImageData.Image_X_pos)
                             : 10
                           : this.getLogoXLeft(
-                              !!this.state.UpdatedImageData &&
-                                parseInt(
-                                  this.state.UpdatedImageData.Image_X_pos,
-                                )
-                                ? parseInt(
-                                    this.state.UpdatedImageData.Image_X_pos,
-                                  )
-                                : 10,
-                              !!this.state.UpdatedImageData &&
-                                parseInt(this.state.UpdatedImageData.Width)
-                                ? parseInt(this.state.UpdatedImageData.Width)
-                                : 50,
-                            ),
+                            !!this.state.UpdatedImageData &&
+                              parseInt(
+                                this.state.UpdatedImageData.Image_X_pos,
+                              )
+                              ? parseInt(
+                                this.state.UpdatedImageData.Image_X_pos,
+                              )
+                              : 10,
+                            !!this.state.UpdatedImageData &&
+                              parseInt(this.state.UpdatedImageData.Width)
+                              ? parseInt(this.state.UpdatedImageData.Width)
+                              : 50,
+                          ),
                       },
                     ]}
                     source={
                       !!this.state.imgSrc
-                        ? {uri: this.state.imgSrc}
+                        ? { uri: this.state.imgSrc }
                         : require('../assets/images/addImg.png')
                     }
                     resizeMode={'contain'}
@@ -469,7 +469,7 @@ export default class PosterC extends React.Component {
                         ? config.Constant.SCREEN_WIDTH * 0.2
                         : !!this.state.UpdatedImageData &&
                           parseInt(this.state.UpdatedImageData.WR_Size)
-                        ? this.getFullWidthImage(
+                          ? this.getFullWidthImage(
                             !!this.state.UpdatedImageData &&
                               parseInt(this.state.UpdatedImageData.WR_Size)
                               ? parseInt(this.state.UpdatedImageData.WR_Size)
@@ -479,12 +479,12 @@ export default class PosterC extends React.Component {
                               ? parseInt(this.state.UpdatedImageData.Width)
                               : 50,
                           )
-                        : 50,
+                          : 50,
                       height: original
                         ? config.Constant.SCREEN_WIDTH * 0.2
                         : !!this.state.UpdatedImageData &&
                           parseInt(this.state.UpdatedImageData.Height)
-                        ? this.getFullHeightImage(
+                          ? this.getFullHeightImage(
                             !!this.state.UpdatedImageData &&
                               parseInt(this.state.UpdatedImageData.WR_Size)
                               ? parseInt(this.state.UpdatedImageData.WR_Size)
@@ -498,7 +498,7 @@ export default class PosterC extends React.Component {
                               ? parseInt(this.state.UpdatedImageData.Width)
                               : 50,
                           )
-                        : 50,
+                          : 50,
 
                       top: original
                         ? !!this.state.UpdatedImageData &&
@@ -506,34 +506,34 @@ export default class PosterC extends React.Component {
                           ? parseInt(this.state.UpdatedImageData.WR_Y_pos)
                           : 10
                         : this.getLogoYTop(
-                            !!this.state.UpdatedImageData &&
-                              parseInt(this.state.UpdatedImageData.WR_Y_pos)
-                              ? parseInt(this.state.UpdatedImageData.WR_Y_pos)
-                              : 10,
-                            !!this.state.UpdatedImageData &&
-                              parseInt(this.state.UpdatedImageData.Height)
-                              ? parseInt(this.state.UpdatedImageData.Height)
-                              : 50,
-                            !!this.state.UpdatedImageData &&
-                              parseInt(this.state.UpdatedImageData.Width)
-                              ? parseInt(this.state.UpdatedImageData.Width)
-                              : 50,
-                          ),
+                          !!this.state.UpdatedImageData &&
+                            parseInt(this.state.UpdatedImageData.WR_Y_pos)
+                            ? parseInt(this.state.UpdatedImageData.WR_Y_pos)
+                            : 10,
+                          !!this.state.UpdatedImageData &&
+                            parseInt(this.state.UpdatedImageData.Height)
+                            ? parseInt(this.state.UpdatedImageData.Height)
+                            : 50,
+                          !!this.state.UpdatedImageData &&
+                            parseInt(this.state.UpdatedImageData.Width)
+                            ? parseInt(this.state.UpdatedImageData.Width)
+                            : 50,
+                        ),
                       left: original
                         ? !!this.state.UpdatedImageData &&
                           parseInt(this.state.UpdatedImageData.WR_X_pos)
                           ? parseInt(this.state.UpdatedImageData.WR_X_pos)
                           : 10
                         : this.getLogoXLeft(
-                            !!this.state.UpdatedImageData &&
-                              parseInt(this.state.UpdatedImageData.WR_X_pos)
-                              ? parseInt(this.state.UpdatedImageData.WR_X_pos)
-                              : 10,
-                            !!this.state.UpdatedImageData &&
-                              parseInt(this.state.UpdatedImageData.Width)
-                              ? parseInt(this.state.UpdatedImageData.Width)
-                              : 50,
-                          ),
+                          !!this.state.UpdatedImageData &&
+                            parseInt(this.state.UpdatedImageData.WR_X_pos)
+                            ? parseInt(this.state.UpdatedImageData.WR_X_pos)
+                            : 10,
+                          !!this.state.UpdatedImageData &&
+                            parseInt(this.state.UpdatedImageData.Width)
+                            ? parseInt(this.state.UpdatedImageData.Width)
+                            : 50,
+                        ),
                     },
                   ]}
                   source={require('../assets/images/world_record.png')}
@@ -551,61 +551,61 @@ export default class PosterC extends React.Component {
                               ? parseInt(this.state.UpdatedImageData.Name_Y_pos)
                               : 10
                             : this.getLogoYTop(
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(
-                                    this.state.UpdatedImageData.Name_Y_pos,
-                                  )
-                                  ? parseInt(
-                                      this.state.UpdatedImageData.Name_Y_pos,
-                                    )
-                                  : 10,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Height)
-                                  ? parseInt(this.state.UpdatedImageData.Height)
-                                  : 50,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Width)
-                                  ? parseInt(this.state.UpdatedImageData.Width)
-                                  : 50,
-                              ),
+                              !!this.state.UpdatedImageData &&
+                                parseInt(
+                                  this.state.UpdatedImageData.Name_Y_pos,
+                                )
+                                ? parseInt(
+                                  this.state.UpdatedImageData.Name_Y_pos,
+                                )
+                                : 10,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Height)
+                                ? parseInt(this.state.UpdatedImageData.Height)
+                                : 50,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Width)
+                                ? parseInt(this.state.UpdatedImageData.Width)
+                                : 50,
+                            ),
                           left: original
                             ? !!this.state.UpdatedImageData &&
                               parseInt(this.state.UpdatedImageData.Name_X_pos)
                               ? parseInt(this.state.UpdatedImageData.Name_X_pos)
                               : 10
                             : this.getLogoXLeft(
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(
-                                    this.state.UpdatedImageData.Name_X_pos,
-                                  )
-                                  ? parseInt(
-                                      this.state.UpdatedImageData.Name_X_pos,
-                                    )
-                                  : 10,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Width)
-                                  ? parseInt(this.state.UpdatedImageData.Width)
-                                  : 50,
-                              ),
+                              !!this.state.UpdatedImageData &&
+                                parseInt(
+                                  this.state.UpdatedImageData.Name_X_pos,
+                                )
+                                ? parseInt(
+                                  this.state.UpdatedImageData.Name_X_pos,
+                                )
+                                : 10,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Width)
+                                ? parseInt(this.state.UpdatedImageData.Width)
+                                : 50,
+                            ),
                           width: original
                             ? config.Constant.SCREEN_WIDTH * 0.2
                             : !!this.state.UpdatedImageData &&
                               parseInt(this.state.UpdatedImageData.Image_Width)
-                            ? this.getFullWidthImage(
+                              ? this.getFullWidthImage(
                                 !!this.state.UpdatedImageData &&
                                   parseInt(
                                     this.state.UpdatedImageData.Image_Width,
                                   )
                                   ? parseInt(
-                                      this.state.UpdatedImageData.Image_Width,
-                                    )
+                                    this.state.UpdatedImageData.Image_Width,
+                                  )
                                   : 10,
                                 !!this.state.UpdatedImageData &&
                                   parseInt(this.state.UpdatedImageData.Width)
                                   ? parseInt(this.state.UpdatedImageData.Width)
                                   : 50,
                               )
-                            : 50,
+                              : 50,
                           alignContent: 'center',
                           justifyContent: 'center',
                         },
@@ -616,22 +616,38 @@ export default class PosterC extends React.Component {
                           {
                             fontSize:
                               !!this.state.UpdatedImageData &&
-                              parseInt(this.state.UpdatedImageData.Width)
-                                ? config.Constant.SCREEN_WIDTH * 0.033
+                                parseInt(this.state.UpdatedImageData.Name_Size)
+                                ? parseInt(this.state.UpdatedImageData.Name_Size)
                                 : 15,
                             marginTop: 0,
                             color:
                               !!this.state.UpdatedImageData &&
-                              !!this.state.UpdatedImageData.Color
+                                !!this.state.UpdatedImageData.Color
                                 ? this.state.UpdatedImageData.Color
                                 : config.Constant.COLOR_PRIMARY,
                           },
                         ]}>
                         {config.Constant.USER_DATA.Name}
                         {'\n'}
-                        {config.Constant.USER_DATA.Saloon_Name}
+                        <Text style={{
+                          fontSize:
+                            !!this.state.UpdatedImageData &&
+                              parseInt(this.state.UpdatedImageData.Salon_Size)
+                              ? parseInt(this.state.UpdatedImageData.Salon_Size)
+                              : 15,
+                        }}>
+                          {config.Constant.USER_DATA.Saloon_Name}
+                        </Text>
                         {'\n'}
+                        <Text style={{
+                          fontSize:
+                            !!this.state.UpdatedImageData &&
+                              parseInt(this.state.UpdatedImageData.Contact_Size)
+                              ? parseInt(this.state.UpdatedImageData.Contact_Size)
+                              : 15,
+                        }}>
                         {config.Constant.USER_DATA.Mobile}
+                        </Text>
                       </Text>
                     </View>
                   )}
@@ -646,48 +662,48 @@ export default class PosterC extends React.Component {
                             ? !!this.state.UpdatedImageData &&
                               parseInt(this.state.UpdatedImageData.Salon_Y_pos)
                               ? parseInt(
-                                  this.state.UpdatedImageData.Salon_Y_pos,
-                                )
+                                this.state.UpdatedImageData.Salon_Y_pos,
+                              )
                               : 10
                             : this.getLogoYTop(
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(
-                                    this.state.UpdatedImageData.Salon_Y_pos,
-                                  )
-                                  ? parseInt(
-                                      this.state.UpdatedImageData.Salon_Y_pos,
-                                    )
-                                  : 10,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Height)
-                                  ? parseInt(this.state.UpdatedImageData.Height)
-                                  : 50,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Width)
-                                  ? parseInt(this.state.UpdatedImageData.Width)
-                                  : 50,
-                              ),
+                              !!this.state.UpdatedImageData &&
+                                parseInt(
+                                  this.state.UpdatedImageData.Salon_Y_pos,
+                                )
+                                ? parseInt(
+                                  this.state.UpdatedImageData.Salon_Y_pos,
+                                )
+                                : 10,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Height)
+                                ? parseInt(this.state.UpdatedImageData.Height)
+                                : 50,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Width)
+                                ? parseInt(this.state.UpdatedImageData.Width)
+                                : 50,
+                            ),
                           left: original
                             ? !!this.state.UpdatedImageData &&
                               parseInt(this.state.UpdatedImageData.Salon_X_pos)
                               ? parseInt(
-                                  this.state.UpdatedImageData.Salon_X_pos,
-                                )
+                                this.state.UpdatedImageData.Salon_X_pos,
+                              )
                               : 10
                             : this.getLogoXLeft(
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(
-                                    this.state.UpdatedImageData.Salon_X_pos,
-                                  )
-                                  ? parseInt(
-                                      this.state.UpdatedImageData.Salon_X_pos,
-                                    )
-                                  : 10,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Width)
-                                  ? parseInt(this.state.UpdatedImageData.Width)
-                                  : 50,
-                              ),
+                              !!this.state.UpdatedImageData &&
+                                parseInt(
+                                  this.state.UpdatedImageData.Salon_X_pos,
+                                )
+                                ? parseInt(
+                                  this.state.UpdatedImageData.Salon_X_pos,
+                                )
+                                : 10,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Width)
+                                ? parseInt(this.state.UpdatedImageData.Width)
+                                : 50,
+                            ),
                         },
                       ]}>
                       <Text
@@ -696,13 +712,13 @@ export default class PosterC extends React.Component {
                           {
                             fontSize:
                               !!this.state.UpdatedImageData &&
-                              parseInt(this.state.UpdatedImageData.Width)
+                                parseInt(this.state.UpdatedImageData.Width)
                                 ? config.Constant.SCREEN_WIDTH * 0.033
                                 : 15,
                             marginTop: -2,
                             color:
                               !!this.state.UpdatedImageData &&
-                              !!this.state.UpdatedImageData.Color
+                                !!this.state.UpdatedImageData.Color
                                 ? this.state.UpdatedImageData.Color
                                 : config.Constant.COLOR_PRIMARY,
                           },
@@ -724,50 +740,50 @@ export default class PosterC extends React.Component {
                                 this.state.UpdatedImageData.Contact_Y_pos,
                               )
                               ? parseInt(
-                                  this.state.UpdatedImageData.Contact_Y_pos,
-                                )
+                                this.state.UpdatedImageData.Contact_Y_pos,
+                              )
                               : 10
                             : this.getLogoYTop(
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(
-                                    this.state.UpdatedImageData.Contact_Y_pos,
-                                  )
-                                  ? parseInt(
-                                      this.state.UpdatedImageData.Contact_Y_pos,
-                                    )
-                                  : 10,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Height)
-                                  ? parseInt(this.state.UpdatedImageData.Height)
-                                  : 50,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Width)
-                                  ? parseInt(this.state.UpdatedImageData.Width)
-                                  : 50,
-                              ),
+                              !!this.state.UpdatedImageData &&
+                                parseInt(
+                                  this.state.UpdatedImageData.Contact_Y_pos,
+                                )
+                                ? parseInt(
+                                  this.state.UpdatedImageData.Contact_Y_pos,
+                                )
+                                : 10,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Height)
+                                ? parseInt(this.state.UpdatedImageData.Height)
+                                : 50,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Width)
+                                ? parseInt(this.state.UpdatedImageData.Width)
+                                : 50,
+                            ),
                           left: original
                             ? !!this.state.UpdatedImageData &&
                               parseInt(
                                 this.state.UpdatedImageData.Contact_X_pos,
                               )
                               ? parseInt(
-                                  this.state.UpdatedImageData.Contact_X_pos,
-                                )
+                                this.state.UpdatedImageData.Contact_X_pos,
+                              )
                               : 10
                             : this.getLogoXLeft(
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(
-                                    this.state.UpdatedImageData.Contact_X_pos,
-                                  )
-                                  ? parseInt(
-                                      this.state.UpdatedImageData.Contact_X_pos,
-                                    )
-                                  : 10,
-                                !!this.state.UpdatedImageData &&
-                                  parseInt(this.state.UpdatedImageData.Width)
-                                  ? parseInt(this.state.UpdatedImageData.Width)
-                                  : 50,
-                              ),
+                              !!this.state.UpdatedImageData &&
+                                parseInt(
+                                  this.state.UpdatedImageData.Contact_X_pos,
+                                )
+                                ? parseInt(
+                                  this.state.UpdatedImageData.Contact_X_pos,
+                                )
+                                : 10,
+                              !!this.state.UpdatedImageData &&
+                                parseInt(this.state.UpdatedImageData.Width)
+                                ? parseInt(this.state.UpdatedImageData.Width)
+                                : 50,
+                            ),
                         },
                       ]}>
                       <Text
@@ -776,13 +792,13 @@ export default class PosterC extends React.Component {
                           {
                             fontSize:
                               !!this.state.UpdatedImageData &&
-                              parseInt(this.state.UpdatedImageData.Width)
+                                parseInt(this.state.UpdatedImageData.Width)
                                 ? config.Constant.SCREEN_WIDTH * 0.033
                                 : 15,
                             marginTop: -2,
                             color:
                               !!this.state.UpdatedImageData &&
-                              !!this.state.UpdatedImageData.Color
+                                !!this.state.UpdatedImageData.Color
                                 ? this.state.UpdatedImageData.Color
                                 : config.Constant.COLOR_PRIMARY,
                           },
@@ -825,14 +841,14 @@ export default class PosterC extends React.Component {
                   onPress={async () => {
                     this.onImageLoad(true);
                   }}
-                  containerStyle={{width: '48%'}}
+                  containerStyle={{ width: '48%' }}
                   btnTxt={'Save Image'}
                 />
                 <CustButton
                   onPress={async () => {
                     this.onImageLoad(false);
                   }}
-                  containerStyle={{width: '48%'}}
+                  containerStyle={{ width: '48%' }}
                   btnTxt={'Share Image'}
                 />
               </View>
@@ -849,7 +865,7 @@ export default class PosterC extends React.Component {
               alignItems: 'center',
             }}>
             <Image
-              style={{width: 60, height: 60}}
+              style={{ width: 60, height: 60 }}
               resizeMode={'contain'}
               source={require('../assets/images/loadUI.gif')}
             />
@@ -864,7 +880,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  mainContainer: {width: '100%', alignSelf: 'center'},
+  mainContainer: { width: '100%', alignSelf: 'center' },
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',

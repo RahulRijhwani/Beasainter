@@ -35,7 +35,7 @@ export default class Login extends React.Component {
         'Please fill correct phone number',
       );
       try {
-        // await AsyncStorage.setItem('uId', '4');
+        // await AsyncStorage.setItem('uId', '100');
 
         // this.props.navigation.reset({
         //   index: 1,
