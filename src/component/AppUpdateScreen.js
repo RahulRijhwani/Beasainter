@@ -14,7 +14,7 @@ export default class AppUpdateScreen extends React.PureComponent {
 		if (Platform.OS === 'ios') {
 			//url = `itms-apps://itunes.apple.com/us/app/id15036?mt=8`;
 		} else {
-			url = ``;
+			url = `market://details?id=com.beasa2&cache_id=${Math.random()}`;
 		}
 		Linking.openURL(url);
 	};
