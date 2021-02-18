@@ -4,6 +4,7 @@ import config from '../config';
 import NetInfo from '@react-native-community/netinfo';
 import { StackActions } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import moment from "moment";
 
 const isIphoneX = () => {
 	const dimen = Dimensions.get('window');
@@ -140,6 +141,90 @@ const getValidMessage = async (point) => {
 	}
 	return valid;
 };
+const AddLog = async () => {
+	try {
+	  var data = await AsyncStorage.getItem("LogBook");
+	  if (!!data) {
+		data = JSON.parse(data);
+		data.map((itm, inde) => {
+		  if (!itm.Endtime) {
+			data[inde].Endtime = moment().format("YYYY-MM-DD HH:mm:ss");
+		  }
+		});
+		data.push({
+		  Starttime: moment().format("YYYY-MM-DD HH:mm:ss"),
+		  Endtime: "",
+		});
+		console.log("---LOG BOOK---Start LOG" + JSON.stringify(data));
+		await AsyncStorage.setItem("LogBook", JSON.stringify(data));
+	  } else {
+		var data = [];
+		data.map((itm, inde) => {
+		  if (!itm.Endtime) {
+			data[inde].Endtime = moment().format("YYYY-MM-DD HH:mm:ss");
+		  }
+		});
+		data.push({
+		  Starttime: moment().format("YYYY-MM-DD HH:mm:ss"),
+		  Endtime: "",
+		});
+		console.log("---LOG BOOK---Start LOG" + JSON.stringify(data));
+		await AsyncStorage.setItem("LogBook", JSON.stringify(data));
+	  }
+	} catch (error) {}
+  };
+  const EndLog = async () => {
+	try {
+	  var data = await AsyncStorage.getItem("LogBook");
+	  if (!!data) {
+		data = JSON.parse(data);
+		data.map((itm, inde) => {
+		  if (!itm.Endtime) {
+			data[inde].Endtime = moment().format("YYYY-MM-DD HH:mm:ss");
+		  }
+		});
+		console.log("---LOG BOOK---END LOG" + JSON.stringify(data));
+		await AsyncStorage.setItem("LogBook", JSON.stringify(data));
+	  }
+	} catch (error) {}
+  };
+  
+  const UploadData = async (isPopup) => {
+	try {
+	  var data = await AsyncStorage.getItem("LogBook");
+	  if (!!data) {
+		data = JSON.parse(data);
+		data.map((itm, inde) => {
+		  if (!itm.Endtime) {
+			data[inde].Endtime = moment().format("YYYY-MM-DD HH:mm:ss");
+		  }
+		});
+		console.log("---LOG BOOK---UPLOAD LOG" + JSON.stringify(data));
+		await AsyncStorage.removeItem("LogBook");
+		const formData = new FormData();
+		formData.append("uId", config.Constant.USER_DATA.uId);
+		formData.append("data", JSON.stringify(data));
+		config.Constant.showLoader.showLoader();
+		var data = await modules.APIServices.PostApiCall(
+		  config.ApiEndpoint.LOG_BOOK,
+		  formData
+		);
+		config.Constant.showLoader.hideLoader();
+		if (!!data && data.status && data.status == "Success") {
+		  if (!!isPopup) {
+			modules.DropDownAlert.showAlert(
+			  "success",
+			  "Success",
+			  "Logbook uploaded successfully"
+			);
+		  }
+		} else {
+		}
+	  }
+	} catch (error) {}
+  };
+
+
 const Utilities = {
 	isIphoneX,
 	isNumber,
@@ -151,7 +236,10 @@ const Utilities = {
 	logoutFun,
 	mobileValidate,
 	getValid,
-	getValidMessage
+	getValidMessage,
+	AddLog,
+  EndLog,
+  UploadData,
 };
 
 module.exports = Utilities;

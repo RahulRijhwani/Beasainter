@@ -44,7 +44,8 @@
     "react-native-screens": "^2.16.1",
     "react-native-shapes": "^0.1.0",
     "react-native-share": "^5.1.0",
-    "react-native-view-shot": "^3.1.2"
+    "react-native-view-shot": "^3.1.2",
+    "react-native-zoom-us": "^5.3.1"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",

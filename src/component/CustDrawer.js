@@ -51,6 +51,15 @@ export default class CustDrawer extends React.Component {
             style={[styles.itemContainer]}>
             <Text style={styles.itemTxt}>{'Profile'}</Text>
           </TouchableOpacity>
+          {/* <TouchableOpacity
+            onPress={() => {
+              this.props.props.navigation.closeDrawer();
+              this.props.props.navigation.navigate('UploadImg');
+            }}
+            activeOpacity={0.6}
+            style={[styles.itemContainer]}>
+            <Text style={styles.itemTxt}>{'Upload Event Images'}</Text>
+          </TouchableOpacity> */}
           <TouchableOpacity
             onPress={() => {
               Alert.alert('Logout', `Are you sure you want logout`, [

@@ -11,6 +11,7 @@ import DrawerNavigator from './DrawerNavigator';
 import TabNavigator from './TabNavigator';
 import RegisterNewForm from '../screens/RegisterNewForm';
 import PosterC from '../screens/PosterC';
+import UploadImg from '../screens/UploadImg';
 const Stack = createStackNavigator();
 
 export default (MainNavigator = () => {
@@ -25,6 +26,7 @@ export default (MainNavigator = () => {
 				<Stack.Screen name="Signup" component={Signup} />
 				<Stack.Screen name="RegisterNewForm" component={RegisterNewForm} />
 				<Stack.Screen name="PosterCInner" component={PosterC} />
+				<Stack.Screen name="UploadImg" component={UploadImg} />
 				{/* <Stack.Screen name="Category" component={Category} />
 				<Stack.Screen name="PosterCInner" component={PosterC} />
 				

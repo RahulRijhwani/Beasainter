@@ -35,12 +35,12 @@ export default class Login extends React.Component {
         'Please fill correct phone number',
       );
       try {
-        // await AsyncStorage.setItem('uId', '100');
+        await AsyncStorage.setItem('uId', '15');
 
-        // this.props.navigation.reset({
-        //   index: 1,
-        //   routes: [{name: 'DrawerNavigator'}],
-        // });
+        this.props.navigation.reset({
+          index: 1,
+          routes: [{name: 'DrawerNavigator'}],
+        });
       } catch (error) {}
     } else {
       var otpHash = await RNOtpVerify.getHash();
